@@ -111,6 +111,10 @@ class Teacher(models.Model):
         related_name='teachers',
         help_text="Дисциплины, преподаваемые учителем"
     )
+    is_main = models.BooleanField(
+        verbose_name='Показать на главной',
+        default=False,
+    )
 
     def __str__(self):
         return f"{self.name} {self.surname}"
@@ -131,7 +135,8 @@ class Customer(models.Model):
         help_text="Имя клиента"
     )
     surname = models.CharField(
-        verbose_name="Фамилия"
+        verbose_name="Фамилия",
+        max_length=255
     )
     email = models.EmailField(
         verbose_name="Email",

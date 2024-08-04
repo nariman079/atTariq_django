@@ -1,6 +1,11 @@
 from rest_framework import serializers
-from src.models import Discipline, Teacher, Customer, Review
+from src.models import Discipline, Teacher, Customer, Review, Statistic
 
+
+class StatisticSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Statistic
+        fields = "__all__"
 
 
 class DisciplineSerializer(serializers.ModelSerializer):
