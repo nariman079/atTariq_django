@@ -7,3 +7,4 @@ class StatisticViewSet(ModelViewSet):
     http_method_names = ['get', 'head', 'options']
     queryset = Statistic.objects.all()
     serializer_class = StatisticSerializer
+    pagination_class = None
