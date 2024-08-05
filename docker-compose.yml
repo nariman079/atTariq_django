@@ -16,7 +16,7 @@ services:
     network_mode: 'host'
 
   nginx:
-    image: nginx:alpine
+    image: nginx:latest
     restart: always
     ports:
       - "443:443"
