@@ -3,8 +3,7 @@ from rest_framework import serializers
 
 from src.models import Teacher, Discipline
 from src.serializers.base_serializers import (TeacherSerializer,
-                                              DisciplineSerializer,
-                                              )
+                                              DisciplineSerializer)
 
 
 class DisciplineListSerializer(DisciplineSerializer):
@@ -39,7 +38,7 @@ class TeacherListSerializer(TeacherSerializer):
 
     def get_disciplines(self, obj: Teacher) -> any:
         return TeacherDisciplineSerializer(
-            instance=obj.disciplines.all()[:2],
+            instance=obj.disciplines.all()[:settings.DISCIPLINE_COUNT_IN_LIST],
             many=True,
         ).data
 
