@@ -13,6 +13,7 @@ django-cors-headers = "^4.4.0"
 django-filter = "^24.3"
 postgres = "^4.0"
 python-dotenv = "^1.0.1"
+pillow = "^10.4.0"
 
 
 [build-system]
